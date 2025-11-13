@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/thk/coding/neural_network/build",
+  "command": "/usr/bin/c++  -I/home/thk/coding/neural_network/include -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -o CMakeFiles/NeuralNetwork.dir/src/tensor.cpp.o -c /home/thk/coding/neural_network/src/tensor.cpp",
+  "file": "/home/thk/coding/neural_network/src/tensor.cpp",
+  "output": "CMakeFiles/NeuralNetwork.dir/src/tensor.cpp.o"
+},
+{
+  "directory": "/home/thk/coding/neural_network/build",
+  "command": "/usr/bin/c++  -I/home/thk/coding/neural_network/include -O3 -DNDEBUG -std=c++20 -o CMakeFiles/main.dir/examples/main.cpp.o -c /home/thk/coding/neural_network/examples/main.cpp",
+  "file": "/home/thk/coding/neural_network/examples/main.cpp",
+  "output": "CMakeFiles/main.dir/examples/main.cpp.o"
+},
+{
+  "directory": "/home/thk/coding/neural_network/build",
+  "command": "/usr/bin/c++  -I/home/thk/coding/neural_network/include -O3 -DNDEBUG -std=c++20 -o CMakeFiles/NeuralNetwork_tests.dir/tests/test_main.cpp.o -c /home/thk/coding/neural_network/tests/test_main.cpp",
+  "file": "/home/thk/coding/neural_network/tests/test_main.cpp",
+  "output": "CMakeFiles/NeuralNetwork_tests.dir/tests/test_main.cpp.o"
+}
+]

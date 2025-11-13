@@ -1,0 +1,19 @@
+Start testing: Nov 13 13:42 CET
+----------------------------------------------------------
+1/1 Testing: NeuralNetwork_RunTests
+1/1 Test: NeuralNetwork_RunTests
+Command: "/home/thk/coding/neural_network/build/NeuralNetwork_tests"
+Directory: /home/thk/coding/neural_network/build
+"NeuralNetwork_RunTests" start time: Nov 13 13:42 CET
+Output:
+----------------------------------------------------------
+CMake test build OK
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"NeuralNetwork_RunTests" end time: Nov 13 13:42 CET
+"NeuralNetwork_RunTests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 13 13:42 CET
