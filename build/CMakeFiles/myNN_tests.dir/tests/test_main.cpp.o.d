@@ -1,4 +1,4 @@
-CMakeFiles/NeuralNetwork_tests.dir/tests/test_main.cpp.o: \
+CMakeFiles/myNN_tests.dir/tests/test_main.cpp.o: \
  /home/thk/coding/neural_network/tests/test_main.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/13/cassert \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \

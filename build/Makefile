@@ -128,115 +128,139 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named NeuralNetwork
+# Target rules for targets named myNN
 
 # Build rule for target.
-NeuralNetwork: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NeuralNetwork
-.PHONY : NeuralNetwork
+myNN: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 myNN
+.PHONY : myNN
 
 # fast build rule for target.
-NeuralNetwork/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetwork.dir/build.make CMakeFiles/NeuralNetwork.dir/build
-.PHONY : NeuralNetwork/fast
+myNN/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myNN.dir/build.make CMakeFiles/myNN.dir/build
+.PHONY : myNN/fast
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named MyNN
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
-.PHONY : main
+MyNN: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MyNN
+.PHONY : MyNN
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+MyNN/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNN.dir/build.make CMakeFiles/MyNN.dir/build
+.PHONY : MyNN/fast
 
 #=============================================================================
-# Target rules for targets named NeuralNetwork_tests
+# Target rules for targets named myNN_tests
 
 # Build rule for target.
-NeuralNetwork_tests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NeuralNetwork_tests
-.PHONY : NeuralNetwork_tests
+myNN_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 myNN_tests
+.PHONY : myNN_tests
 
 # fast build rule for target.
-NeuralNetwork_tests/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetwork_tests.dir/build.make CMakeFiles/NeuralNetwork_tests.dir/build
-.PHONY : NeuralNetwork_tests/fast
+myNN_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myNN_tests.dir/build.make CMakeFiles/myNN_tests.dir/build
+.PHONY : myNN_tests/fast
 
-examples/main.o: examples/main.cpp.o
-.PHONY : examples/main.o
-
-# target to build an object file
-examples/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/examples/main.cpp.o
-.PHONY : examples/main.cpp.o
-
-examples/main.i: examples/main.cpp.i
-.PHONY : examples/main.i
-
-# target to preprocess a source file
-examples/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/examples/main.cpp.i
-.PHONY : examples/main.cpp.i
-
-examples/main.s: examples/main.cpp.s
-.PHONY : examples/main.s
-
-# target to generate assembly for a file
-examples/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/examples/main.cpp.s
-.PHONY : examples/main.cpp.s
-
-src/tensor.o: src/tensor.cpp.o
-.PHONY : src/tensor.o
+examples/MyNN.o: examples/MyNN.cpp.o
+.PHONY : examples/MyNN.o
 
 # target to build an object file
-src/tensor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetwork.dir/build.make CMakeFiles/NeuralNetwork.dir/src/tensor.cpp.o
-.PHONY : src/tensor.cpp.o
+examples/MyNN.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNN.dir/build.make CMakeFiles/MyNN.dir/examples/MyNN.cpp.o
+.PHONY : examples/MyNN.cpp.o
 
-src/tensor.i: src/tensor.cpp.i
-.PHONY : src/tensor.i
+examples/MyNN.i: examples/MyNN.cpp.i
+.PHONY : examples/MyNN.i
 
 # target to preprocess a source file
-src/tensor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetwork.dir/build.make CMakeFiles/NeuralNetwork.dir/src/tensor.cpp.i
-.PHONY : src/tensor.cpp.i
+examples/MyNN.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNN.dir/build.make CMakeFiles/MyNN.dir/examples/MyNN.cpp.i
+.PHONY : examples/MyNN.cpp.i
 
-src/tensor.s: src/tensor.cpp.s
-.PHONY : src/tensor.s
+examples/MyNN.s: examples/MyNN.cpp.s
+.PHONY : examples/MyNN.s
 
 # target to generate assembly for a file
-src/tensor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetwork.dir/build.make CMakeFiles/NeuralNetwork.dir/src/tensor.cpp.s
-.PHONY : src/tensor.cpp.s
+examples/MyNN.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNN.dir/build.make CMakeFiles/MyNN.dir/examples/MyNN.cpp.s
+.PHONY : examples/MyNN.cpp.s
 
-tests/test_main.o: tests/test_main.cpp.o
-.PHONY : tests/test_main.o
+src/DenseLayer.o: src/DenseLayer.cpp.o
+.PHONY : src/DenseLayer.o
 
 # target to build an object file
-tests/test_main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetwork_tests.dir/build.make CMakeFiles/NeuralNetwork_tests.dir/tests/test_main.cpp.o
-.PHONY : tests/test_main.cpp.o
+src/DenseLayer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myNN.dir/build.make CMakeFiles/myNN.dir/src/DenseLayer.cpp.o
+.PHONY : src/DenseLayer.cpp.o
 
-tests/test_main.i: tests/test_main.cpp.i
-.PHONY : tests/test_main.i
+src/DenseLayer.i: src/DenseLayer.cpp.i
+.PHONY : src/DenseLayer.i
 
 # target to preprocess a source file
-tests/test_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetwork_tests.dir/build.make CMakeFiles/NeuralNetwork_tests.dir/tests/test_main.cpp.i
-.PHONY : tests/test_main.cpp.i
+src/DenseLayer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myNN.dir/build.make CMakeFiles/myNN.dir/src/DenseLayer.cpp.i
+.PHONY : src/DenseLayer.cpp.i
 
-tests/test_main.s: tests/test_main.cpp.s
-.PHONY : tests/test_main.s
+src/DenseLayer.s: src/DenseLayer.cpp.s
+.PHONY : src/DenseLayer.s
 
 # target to generate assembly for a file
-tests/test_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetwork_tests.dir/build.make CMakeFiles/NeuralNetwork_tests.dir/tests/test_main.cpp.s
-.PHONY : tests/test_main.cpp.s
+src/DenseLayer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myNN.dir/build.make CMakeFiles/myNN.dir/src/DenseLayer.cpp.s
+.PHONY : src/DenseLayer.cpp.s
+
+src/Tensor.o: src/Tensor.cpp.o
+.PHONY : src/Tensor.o
+
+# target to build an object file
+src/Tensor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myNN.dir/build.make CMakeFiles/myNN.dir/src/Tensor.cpp.o
+.PHONY : src/Tensor.cpp.o
+
+src/Tensor.i: src/Tensor.cpp.i
+.PHONY : src/Tensor.i
+
+# target to preprocess a source file
+src/Tensor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myNN.dir/build.make CMakeFiles/myNN.dir/src/Tensor.cpp.i
+.PHONY : src/Tensor.cpp.i
+
+src/Tensor.s: src/Tensor.cpp.s
+.PHONY : src/Tensor.s
+
+# target to generate assembly for a file
+src/Tensor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myNN.dir/build.make CMakeFiles/myNN.dir/src/Tensor.cpp.s
+.PHONY : src/Tensor.cpp.s
+
+tests/test_MyNN.o: tests/test_MyNN.cpp.o
+.PHONY : tests/test_MyNN.o
+
+# target to build an object file
+tests/test_MyNN.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myNN_tests.dir/build.make CMakeFiles/myNN_tests.dir/tests/test_MyNN.cpp.o
+.PHONY : tests/test_MyNN.cpp.o
+
+tests/test_MyNN.i: tests/test_MyNN.cpp.i
+.PHONY : tests/test_MyNN.i
+
+# target to preprocess a source file
+tests/test_MyNN.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myNN_tests.dir/build.make CMakeFiles/myNN_tests.dir/tests/test_MyNN.cpp.i
+.PHONY : tests/test_MyNN.cpp.i
+
+tests/test_MyNN.s: tests/test_MyNN.cpp.s
+.PHONY : tests/test_MyNN.s
+
+# target to generate assembly for a file
+tests/test_MyNN.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myNN_tests.dir/build.make CMakeFiles/myNN_tests.dir/tests/test_MyNN.cpp.s
+.PHONY : tests/test_MyNN.cpp.s
 
 # Help Target
 help:
@@ -247,18 +271,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... NeuralNetwork"
-	@echo "... NeuralNetwork_tests"
-	@echo "... main"
-	@echo "... examples/main.o"
-	@echo "... examples/main.i"
-	@echo "... examples/main.s"
-	@echo "... src/tensor.o"
-	@echo "... src/tensor.i"
-	@echo "... src/tensor.s"
-	@echo "... tests/test_main.o"
-	@echo "... tests/test_main.i"
-	@echo "... tests/test_main.s"
+	@echo "... MyNN"
+	@echo "... myNN"
+	@echo "... myNN_tests"
+	@echo "... examples/MyNN.o"
+	@echo "... examples/MyNN.i"
+	@echo "... examples/MyNN.s"
+	@echo "... src/DenseLayer.o"
+	@echo "... src/DenseLayer.i"
+	@echo "... src/DenseLayer.s"
+	@echo "... src/Tensor.o"
+	@echo "... src/Tensor.i"
+	@echo "... src/Tensor.s"
+	@echo "... tests/test_MyNN.o"
+	@echo "... tests/test_MyNN.i"
+	@echo "... tests/test_MyNN.s"
 .PHONY : help
 
 

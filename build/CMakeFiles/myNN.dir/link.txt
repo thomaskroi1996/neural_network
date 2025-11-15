@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmyNN.a CMakeFiles/myNN.dir/src/DenseLayer.cpp.o CMakeFiles/myNN.dir/src/Tensor.cpp.o
+/usr/bin/ranlib libmyNN.a

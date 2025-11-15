@@ -42,7 +42,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/NeuralNetwork.dir/DependInfo.cmake"
-  "CMakeFiles/main.dir/DependInfo.cmake"
-  "CMakeFiles/NeuralNetwork_tests.dir/DependInfo.cmake"
+  "CMakeFiles/myNN.dir/DependInfo.cmake"
+  "CMakeFiles/MyNN.dir/DependInfo.cmake"
+  "CMakeFiles/myNN_tests.dir/DependInfo.cmake"
   )

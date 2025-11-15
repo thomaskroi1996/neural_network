@@ -5,7 +5,7 @@ cmake_policy(SET CMP0009 NEW)
 # EXAMPLE_SRC at CMakeLists.txt:27 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/thk/coding/neural_network/examples/*.cpp")
 set(OLD_GLOB
-  "/home/thk/coding/neural_network/examples/main.cpp"
+  "/home/thk/coding/neural_network/examples/MyNN.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -15,7 +15,7 @@ endif()
 # TEST_SRC at CMakeLists.txt:38 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/thk/coding/neural_network/tests/*.cpp")
 set(OLD_GLOB
-  "/home/thk/coding/neural_network/tests/test_main.cpp"
+  "/home/thk/coding/neural_network/tests/test_MyNN.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -25,7 +25,8 @@ endif()
 # TINNN_SRC at CMakeLists.txt:20 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/thk/coding/neural_network/src/*.cpp")
 set(OLD_GLOB
-  "/home/thk/coding/neural_network/src/tensor.cpp"
+  "/home/thk/coding/neural_network/src/DenseLayer.cpp"
+  "/home/thk/coding/neural_network/src/Tensor.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
