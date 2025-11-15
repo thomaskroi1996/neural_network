@@ -59,6 +59,10 @@
   "files.associations": {
     "vector": "cpp",
     "initializer_list": "cpp",
-    "string_view": "cpp"
+    "string_view": "cpp",
+    "compare": "cpp",
+    "concepts": "cpp",
+    "functional": "cpp",
+    "random": "cpp"
   }
 }

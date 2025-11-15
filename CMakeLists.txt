@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(NeuralNetwork LANGUAGES CXX)
+project(myNN LANGUAGES CXX)
 
 # === Build settings ===
 set(CMAKE_CXX_STANDARD 20)
@@ -18,9 +18,9 @@ option(BUILD_EXAMPLES "Build example programs" ON)
 
 # === Library target ===
 file(GLOB_RECURSE TINNN_SRC CONFIGURE_DEPENDS src/*.cpp)
-add_library(NeuralNetwork STATIC ${TINNN_SRC})
-target_include_directories(NeuralNetwork PUBLIC include)
-target_compile_options(NeuralNetwork PRIVATE -Wall -Wextra -Wpedantic)
+add_library(myNN STATIC ${TINNN_SRC})
+target_include_directories(myNN PUBLIC include)
+target_compile_options(myNN PRIVATE -Wall -Wextra -Wpedantic)
 
 # === Example executables ===
 if(BUILD_EXAMPLES)
@@ -28,7 +28,7 @@ if(BUILD_EXAMPLES)
     foreach(example ${EXAMPLE_SRC})
         get_filename_component(example_name ${example} NAME_WE)
         add_executable(${example_name} ${example})
-        target_link_libraries(${example_name} PRIVATE NeuralNetwork)
+        target_link_libraries(${example_name} PRIVATE myNN)
     endforeach()
 endif()
 
@@ -36,7 +36,7 @@ endif()
 if(BUILD_TESTS)
     enable_testing()
     file(GLOB TEST_SRC CONFIGURE_DEPENDS tests/*.cpp)
-    add_executable(NeuralNetwork_tests ${TEST_SRC})
-    target_link_libraries(NeuralNetwork_tests PRIVATE NeuralNetwork)
-    add_test(NAME NeuralNetwork_RunTests COMMAND NeuralNetwork_tests)
+    add_executable(myNN_tests ${TEST_SRC})
+    target_link_libraries(myNN_tests PRIVATE myNN)
+    add_test(NAME myNN_RunTests COMMAND myNN_tests)
 endif()
