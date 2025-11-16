@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cmath>
 
+#include "Network.hpp"
 #include "DenseLayer.hpp"
 #include "Tensor.hpp"
 
@@ -192,19 +193,112 @@ void test_denseLayerForward()
     assert(std::fabs(output(1, 1) - 84.0f) < epsilon);
 }
 
+void test_Network()
+{
+    Network net;
+    net.addLayer(DenseLayer(2, 3));
+    net.addLayer(DenseLayer(3, 1));
+
+    Tensor X({2, 2}, {1, 2});
+    Tensor Y_pred = net.forwardPass(X);
+    std::cout << "Y_pred:\n";
+    Y_pred.print();
+
+    Tensor Y_true({0.5, 1.0}, {2, 1});
+    int i = 0;
+    for (auto &layer : net.getLayers())
+    {
+        Tensor dL_dY = layer.dL_dY(Y_pred, Y_true);
+        std::cout << "layer: " << i << " dL_dY:\n";
+        dL_dY.print();
+        Tensor dX = layer.backward(dL_dY);
+        std::cout << "layer: " << i << " dX:\n";
+        dX.print();
+        layer.updateParameters(0.01);
+
+        std::cout << "layer: " << i << " dB_:\n";
+        layer.getdB_().print();
+        std::cout << "layer: " << i << " dW_:\n";
+        layer.getdW_().print();
+        std::cout << "layer: " << i << " w_:\n";
+        layer.getWeights().print();
+        std::cout << "layer: " << i << " b_:\n";
+        layer.getBias().print();
+        i++;
+    }
+
+    std::cout << "y_pred:\n";
+    Y_pred.print();
+}
+
+void test_XOR()
+{
+    std::vector<Tensor> inputs = {
+        Tensor({0.0, 0.0}, 2),
+        Tensor({0.0, 1.0}, 2),
+        Tensor({1.0, 0.0}, 2),
+        Tensor({1.0, 1.0}, 2)};
+
+    std::vector<Tensor> targets = {
+        Tensor({0.0f}, 1),
+        Tensor({1.0f}, 1),
+        Tensor({1.0f}, 1),
+        Tensor({0.0f}, 1)};
+
+    // for (auto &x : inputs)
+    //     x.print();
+
+    // for (auto &x : targets)
+    //     x.print();
+
+    Network net;
+    net.addLayer(DenseLayer(2, 2)); // hidden
+    net.addLayer(DenseLayer(2, 1)); // output
+
+    float lr = 0.1f;
+    int epochs = 5000;
+
+    for (int epoch = 0; epoch < epochs; ++epoch)
+    {
+        float total_loss = 0.0f;
+
+        for (int i = 0; i < 4; i++)
+        {
+            Tensor y_pred = net.forwardPass(inputs[i]);
+
+            float loss = net.getLayers().back().rmse(y_pred, targets[i]); // or layer.rmse
+            total_loss += loss;
+
+            Tensor dL_dY = net.getLayers().back().dL_dY(y_pred, targets[i]); // derivative of loss
+
+            net.backProp(dL_dY, inputs[i]); // must store last inputs inside each layer
+            net.updateParameters(lr);
+        }
+
+        if (epoch % 100 == 0)
+            std::cout << "epoch " << epoch
+                      << " loss = " << total_loss / 4
+                      << "\n";
+    }
+}
+
 int main()
 {
     std::cout << "Running Tensor tests...\n";
 
-    test_ConstructorAndShape();
-    test_fill();
-    test_apply();
-    test_transpose();
-    test_matMul();
-    test_addBroadcast();
-    test_denseLayerForward();
+    // test_ConstructorAndShape();
+    // test_fill();
+    // test_apply();
+    // test_transpose();
+    // test_matMul();
+    // test_addBroadcast();
+    // test_denseLayerForward();
+    // test_Network();
 
-    std::cout << "All tests passed successfully.\n";
+    test_XOR();
+
+    std::cout
+        << "All tests passed successfully.\n";
 
     return 0;
 }

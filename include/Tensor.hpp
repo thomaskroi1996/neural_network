@@ -20,6 +20,11 @@ namespace myNN
     // constructor from 1D vector and shape vector
     Tensor(const std::vector<float> &data, const std::vector<int> &shape);
 
+    // for 1D
+    Tensor(const std::vector<float> &data, int dim)
+        : data_(data), shape_{dim,
+                              1} {}
+
     // get number of total elements
     int size() const;
 
@@ -75,10 +80,13 @@ namespace myNN
     Tensor operator-(const Tensor &a) const;
 
     // multiply tensor with this one, element wise
-    void mul(const Tensor &t);
+    void mul_inplace(const Tensor &t);
 
     // multiply float with tensor
-    void mul(float a);
+    void mul_inplace(float a);
+
+    // multiply tensor with float and return new tensor
+    Tensor mul(float a);
 
     // check tensor dims are same
     bool checkTensorDims(const Tensor &a, const Tensor &b) const { return (a.shape_[0] == b.shape_[0] && a.shape_[1] == b.shape_[1]); }
@@ -111,9 +119,6 @@ namespace myNN
 
     // return sum over rows
     Tensor sumRows() const;
-
-    // multiply tensor with float and return new tensor
-    Tensor mul(const Tensor &t, float a);
   };
 
   template <typename F>

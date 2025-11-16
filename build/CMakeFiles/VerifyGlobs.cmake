@@ -26,6 +26,7 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/thk/coding/neural_network/src/*.cpp")
 set(OLD_GLOB
   "/home/thk/coding/neural_network/src/DenseLayer.cpp"
+  "/home/thk/coding/neural_network/src/Network.cpp"
   "/home/thk/coding/neural_network/src/Tensor.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

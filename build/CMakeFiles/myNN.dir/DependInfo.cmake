@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/thk/coding/neural_network/src/DenseLayer.cpp" "CMakeFiles/myNN.dir/src/DenseLayer.cpp.o" "gcc" "CMakeFiles/myNN.dir/src/DenseLayer.cpp.o.d"
+  "/home/thk/coding/neural_network/src/Network.cpp" "CMakeFiles/myNN.dir/src/Network.cpp.o" "gcc" "CMakeFiles/myNN.dir/src/Network.cpp.o.d"
   "/home/thk/coding/neural_network/src/Tensor.cpp" "CMakeFiles/myNN.dir/src/Tensor.cpp.o" "gcc" "CMakeFiles/myNN.dir/src/Tensor.cpp.o.d"
   )
 

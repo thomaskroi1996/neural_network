@@ -112,7 +112,7 @@ Tensor Tensor::matMul(const Tensor &other) const
 
 Tensor Tensor::transpose() const
 {
-  Tensor transposed({shape_[1], shape_[0]}, 0);
+  Tensor transposed({shape_[1], shape_[0]});
   for (int i = 0; i < shape_[0]; i++)
   {
     for (int j = 0; j < shape_[1]; j++)
@@ -140,7 +140,7 @@ void Tensor::sub(float a)
   }
 }
 
-void Tensor::mul(const Tensor &other)
+void Tensor::mul_inplace(const Tensor &other)
 {
   for (int i = 0; i < size(); i++)
   {
@@ -148,7 +148,7 @@ void Tensor::mul(const Tensor &other)
   }
 }
 
-void Tensor::mul(float a)
+void Tensor::mul_inplace(float a)
 {
   for (int i = 0; i < size(); i++)
   {
@@ -156,13 +156,14 @@ void Tensor::mul(float a)
   }
 }
 
-Tensor Tensor::mul(const Tensor &t, float a)
+Tensor Tensor::mul(float a)
 {
-  Tensor result({t.getShape()});
-  for (int i = 0; i < t.size(); i++)
+  Tensor result({shape_});
+  for (int i = 0; i < size(); i++)
   {
-    result[i] = t[i] * a;
+    result[i] = data_[i] * a;
   }
+  return result;
 }
 
 Tensor Tensor::addBroadcast(const Tensor &other) const
@@ -246,6 +247,8 @@ Tensor Tensor::operator-(const Tensor &a) const
   {
     result[i] = data_[i] - a[i];
   }
+
+  return result;
 }
 
 Tensor Tensor::sumRows() const

@@ -1,1 +1,1 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/MyNN.dir/examples/MyNN.cpp.o -o MyNN  libmyNN.a 
+/usr/bin/c++ -g CMakeFiles/MyNN.dir/examples/MyNN.cpp.o -o MyNN  libmyNN.a 

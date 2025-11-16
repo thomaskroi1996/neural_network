@@ -5,17 +5,26 @@
 
 using namespace myNN;
 
-DenseLayer::DenseLayer(int nInputs, int nOutputs) : w_(Tensor({nInputs, nOutputs})),
-                                                    b_(Tensor({1, nOutputs}))
+DenseLayer::DenseLayer(int nInputs, int nOutputs, bool initialiseGrads) : w_(Tensor({nInputs, nOutputs})),
+                                                                          b_(Tensor({1, nOutputs})),
+                                                                          dW_(Tensor({nInputs, nOutputs})),
+                                                                          dB_(Tensor({1, nOutputs}))
 {
     w_.apply([](float x)
              { return ((float)rand() / RAND_MAX - 0.5f); });
+
+    if (initialiseGrads)
+    {
+        dW_.apply([](float x)
+                  { return ((float)rand() / RAND_MAX - 0.5f); });
+        dB_.apply([](float x)
+                  { return ((float)rand() / RAND_MAX - 0.5f); });
+    }
 }
 
 Tensor DenseLayer::forward(const Tensor &input) const
 {
-    Tensor output = input.matMul(w_).addBroadcast(b_);
-    return output;
+    return input.matMul(w_).addBroadcast(b_);
 }
 
 float DenseLayer::rmse(const Tensor &pred, const Tensor &target) const
@@ -27,24 +36,40 @@ float DenseLayer::rmse(const Tensor &pred, const Tensor &target) const
     return std::sqrt(mse);
 }
 
-Tensor DenseLayer::costDerivative(const Tensor &pred, const Tensor &target) const
+Tensor DenseLayer::dL_dY(const Tensor &pred, const Tensor &target) const
 {
     Tensor diff = pred - target;
-    Tensor derivative = diff.mul(diff, 2.0 / pred.size()); // ew, redo
-    return derivative;
+    return diff.mul(2.0 / pred.size());
 }
 
-Tensor DenseLayer::wGradient(const Tensor &costDerivative, const Tensor &input)
+void DenseLayer::dW(const Tensor &dL_dY, const Tensor &input)
 {
-    return input.transpose().matMul(costDerivative);
+    dW_ = input.transpose().matMul(dL_dY);
 }
 
-Tensor DenseLayer::bGradient(const Tensor &costDerivative)
+void DenseLayer::dB(const Tensor &dL_dY)
 {
-    return costDerivative.sumRows();
+    dB_ = dL_dY.sumRows();
 }
 
-Tensor DenseLayer::inputGradient(const Tensor &costDerivative)
+Tensor DenseLayer::dX(const Tensor &dL_dY)
 {
-    return costDerivative.matMul(w_.transpose());
+    return dL_dY.matMul(w_.transpose());
+}
+
+Tensor DenseLayer::backward(const Tensor &dL_dY)
+{
+
+    Tensor dX = DenseLayer::dX(dL_dY);
+
+    return dX;
+}
+
+void DenseLayer::updateParameters(float lr)
+{
+    Tensor scaled_dW = dW_.mul(lr);
+    w_.sub(scaled_dW);
+
+    Tensor scaled_dB = dB_.mul(lr);
+    b_.sub(scaled_dB);
 }

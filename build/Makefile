@@ -214,6 +214,30 @@ src/DenseLayer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/myNN.dir/build.make CMakeFiles/myNN.dir/src/DenseLayer.cpp.s
 .PHONY : src/DenseLayer.cpp.s
 
+src/Network.o: src/Network.cpp.o
+.PHONY : src/Network.o
+
+# target to build an object file
+src/Network.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myNN.dir/build.make CMakeFiles/myNN.dir/src/Network.cpp.o
+.PHONY : src/Network.cpp.o
+
+src/Network.i: src/Network.cpp.i
+.PHONY : src/Network.i
+
+# target to preprocess a source file
+src/Network.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myNN.dir/build.make CMakeFiles/myNN.dir/src/Network.cpp.i
+.PHONY : src/Network.cpp.i
+
+src/Network.s: src/Network.cpp.s
+.PHONY : src/Network.s
+
+# target to generate assembly for a file
+src/Network.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myNN.dir/build.make CMakeFiles/myNN.dir/src/Network.cpp.s
+.PHONY : src/Network.cpp.s
+
 src/Tensor.o: src/Tensor.cpp.o
 .PHONY : src/Tensor.o
 
@@ -280,6 +304,9 @@ help:
 	@echo "... src/DenseLayer.o"
 	@echo "... src/DenseLayer.i"
 	@echo "... src/DenseLayer.s"
+	@echo "... src/Network.o"
+	@echo "... src/Network.i"
+	@echo "... src/Network.s"
 	@echo "... src/Tensor.o"
 	@echo "... src/Tensor.i"
 	@echo "... src/Tensor.s"

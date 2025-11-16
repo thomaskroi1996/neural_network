@@ -11,10 +11,12 @@ namespace myNN
     private:
         Tensor w_;
         Tensor b_;
+        Tensor dW_;
+        Tensor dB_;
 
     public:
         // constructor
-        DenseLayer(int nInputs, int nOutputs);
+        DenseLayer(int nInputs, int nOutputs, bool initialiseGrads = false);
 
         // forward feed
         Tensor forward(const Tensor &input) const;
@@ -25,15 +27,32 @@ namespace myNN
         // get biases
         Tensor &getBias() { return b_; }
 
+        // get dW_
+        Tensor &getdW_() { return dW_; }
+
+        // get dB_
+        Tensor &getdB_() { return dB_; }
+
+        // RMSE easiest cost function
         float rmse(const Tensor &pred, const Tensor &target) const;
 
-        Tensor costDerivative(const Tensor &pred, const Tensor &target) const;
+        // derivative of RMSE (weird naming)
+        Tensor dL_dY(const Tensor &pred, const Tensor &target) const;
 
-        Tensor wGradient(const Tensor &costDerivative, const Tensor &input);
+        // gradient of weights
+        void dW(const Tensor &dL_dY, const Tensor &input);
 
-        Tensor bGradient(const Tensor &costDerivative);
+        // gradient of bias
+        void dB(const Tensor &dL_dY);
 
-        Tensor inputGradient(const Tensor &costDerivative);
+        // gradient of X
+        Tensor dX(const Tensor &dL_dY);
+
+        // backward prop
+        Tensor backward(const Tensor &dL_dY);
+
+        // update parameters
+        void updateParameters(float lr);
     };
 
 } // myNN

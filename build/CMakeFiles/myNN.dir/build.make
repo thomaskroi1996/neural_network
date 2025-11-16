@@ -83,10 +83,24 @@ CMakeFiles/myNN.dir/src/DenseLayer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/myNN.dir/src/DenseLayer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thk/coding/neural_network/src/DenseLayer.cpp -o CMakeFiles/myNN.dir/src/DenseLayer.cpp.s
 
+CMakeFiles/myNN.dir/src/Network.cpp.o: CMakeFiles/myNN.dir/flags.make
+CMakeFiles/myNN.dir/src/Network.cpp.o: /home/thk/coding/neural_network/src/Network.cpp
+CMakeFiles/myNN.dir/src/Network.cpp.o: CMakeFiles/myNN.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thk/coding/neural_network/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/myNN.dir/src/Network.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/myNN.dir/src/Network.cpp.o -MF CMakeFiles/myNN.dir/src/Network.cpp.o.d -o CMakeFiles/myNN.dir/src/Network.cpp.o -c /home/thk/coding/neural_network/src/Network.cpp
+
+CMakeFiles/myNN.dir/src/Network.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/myNN.dir/src/Network.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thk/coding/neural_network/src/Network.cpp > CMakeFiles/myNN.dir/src/Network.cpp.i
+
+CMakeFiles/myNN.dir/src/Network.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/myNN.dir/src/Network.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thk/coding/neural_network/src/Network.cpp -o CMakeFiles/myNN.dir/src/Network.cpp.s
+
 CMakeFiles/myNN.dir/src/Tensor.cpp.o: CMakeFiles/myNN.dir/flags.make
 CMakeFiles/myNN.dir/src/Tensor.cpp.o: /home/thk/coding/neural_network/src/Tensor.cpp
 CMakeFiles/myNN.dir/src/Tensor.cpp.o: CMakeFiles/myNN.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thk/coding/neural_network/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/myNN.dir/src/Tensor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thk/coding/neural_network/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/myNN.dir/src/Tensor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/myNN.dir/src/Tensor.cpp.o -MF CMakeFiles/myNN.dir/src/Tensor.cpp.o.d -o CMakeFiles/myNN.dir/src/Tensor.cpp.o -c /home/thk/coding/neural_network/src/Tensor.cpp
 
 CMakeFiles/myNN.dir/src/Tensor.cpp.i: cmake_force
@@ -100,16 +114,18 @@ CMakeFiles/myNN.dir/src/Tensor.cpp.s: cmake_force
 # Object files for target myNN
 myNN_OBJECTS = \
 "CMakeFiles/myNN.dir/src/DenseLayer.cpp.o" \
+"CMakeFiles/myNN.dir/src/Network.cpp.o" \
 "CMakeFiles/myNN.dir/src/Tensor.cpp.o"
 
 # External object files for target myNN
 myNN_EXTERNAL_OBJECTS =
 
 libmyNN.a: CMakeFiles/myNN.dir/src/DenseLayer.cpp.o
+libmyNN.a: CMakeFiles/myNN.dir/src/Network.cpp.o
 libmyNN.a: CMakeFiles/myNN.dir/src/Tensor.cpp.o
 libmyNN.a: CMakeFiles/myNN.dir/build.make
 libmyNN.a: CMakeFiles/myNN.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/thk/coding/neural_network/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libmyNN.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/thk/coding/neural_network/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libmyNN.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/myNN.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/myNN.dir/link.txt --verbose=$(VERBOSE)
 

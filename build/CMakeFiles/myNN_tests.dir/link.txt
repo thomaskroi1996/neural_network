@@ -1,1 +1,1 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/myNN_tests.dir/tests/test_MyNN.cpp.o -o myNN_tests  libmyNN.a 
+/usr/bin/c++ -g CMakeFiles/myNN_tests.dir/tests/test_MyNN.cpp.o -o myNN_tests  libmyNN.a 

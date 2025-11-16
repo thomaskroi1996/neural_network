@@ -85,12 +85,12 @@ clean: CMakeFiles/myNN_tests.dir/clean
 CMakeFiles/myNN.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/myNN.dir/build.make CMakeFiles/myNN.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/myNN.dir/build.make CMakeFiles/myNN.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thk/coding/neural_network/build/CMakeFiles --progress-num=3,4,5 "Built target myNN"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thk/coding/neural_network/build/CMakeFiles --progress-num=3,4,5,6 "Built target myNN"
 .PHONY : CMakeFiles/myNN.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/myNN.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thk/coding/neural_network/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/thk/coding/neural_network/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/myNN.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/thk/coding/neural_network/build/CMakeFiles 0
 .PHONY : CMakeFiles/myNN.dir/rule
@@ -116,7 +116,7 @@ CMakeFiles/MyNN.dir/all: CMakeFiles/myNN.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MyNN.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thk/coding/neural_network/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/thk/coding/neural_network/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/MyNN.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/thk/coding/neural_network/build/CMakeFiles 0
 .PHONY : CMakeFiles/MyNN.dir/rule
@@ -137,12 +137,12 @@ CMakeFiles/MyNN.dir/clean:
 CMakeFiles/myNN_tests.dir/all: CMakeFiles/myNN.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/myNN_tests.dir/build.make CMakeFiles/myNN_tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/myNN_tests.dir/build.make CMakeFiles/myNN_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thk/coding/neural_network/build/CMakeFiles --progress-num=6,7 "Built target myNN_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thk/coding/neural_network/build/CMakeFiles --progress-num=7,8 "Built target myNN_tests"
 .PHONY : CMakeFiles/myNN_tests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/myNN_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thk/coding/neural_network/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/thk/coding/neural_network/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/myNN_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/thk/coding/neural_network/build/CMakeFiles 0
 .PHONY : CMakeFiles/myNN_tests.dir/rule
