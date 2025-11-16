@@ -1,6 +1,0 @@
-/home/thk/coding/neural_network/build/CMakeFiles/myNN.dir
-/home/thk/coding/neural_network/build/CMakeFiles/MyNN.dir
-/home/thk/coding/neural_network/build/CMakeFiles/myNN_tests.dir
-/home/thk/coding/neural_network/build/CMakeFiles/test.dir
-/home/thk/coding/neural_network/build/CMakeFiles/edit_cache.dir
-/home/thk/coding/neural_network/build/CMakeFiles/rebuild_cache.dir

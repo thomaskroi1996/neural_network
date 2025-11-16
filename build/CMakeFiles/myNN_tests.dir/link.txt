@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/myNN_tests.dir/tests/test_MyNN.cpp.o -o myNN_tests  libmyNN.a 
