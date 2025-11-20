@@ -33,6 +33,14 @@ void Network::updateParameters(float lr)
 {
     for (auto &layer : layers_)
     {
-        layer.updateParameters(lr); // issue
+        layer.updateParameters(lr);
+    }
+}
+
+void Network::zeroGrad()
+{
+    for (auto &layer : layers_)
+    {
+        layer.getdW_().zeroGrad();
     }
 }

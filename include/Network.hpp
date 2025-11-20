@@ -28,6 +28,8 @@ namespace myNN
 
     // update parameters for each layer
     void updateParameters(float lr);
+
+    void zeroGrad();
   };
 
 } // myNN

@@ -266,3 +266,8 @@ Tensor Tensor::sumRows() const
   }
   return result;
 }
+
+void Tensor::zeroGrad()
+{
+  std::fill(data_.begin(), data_.end(), 0.0f);
+}

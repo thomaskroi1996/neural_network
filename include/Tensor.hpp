@@ -119,6 +119,8 @@ namespace myNN
 
     // return sum over rows
     Tensor sumRows() const;
+
+    void zeroGrad();
   };
 
   template <typename F>
